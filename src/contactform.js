@@ -1,3 +1,5 @@
+// AWS lambda function to catpure form elements, validate re-captcha and send email using SES.
+
 'use strict';
 console.log('Loading function');
 const AWS = require('aws-sdk');
