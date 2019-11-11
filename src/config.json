@@ -1,0 +1,5 @@
+{
+  
+  "captchaSiteSecret": "recaptcha-secret-key-here",
+  "sesConfirmedAddress": "your-verified-ses-email"
+}

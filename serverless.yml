@@ -1,0 +1,48 @@
+# Welcome to the world of serverless computing
+# Website - https://www.naikonpixels.com
+# Author - Prashant Naik
+
+service: contact-form-serverless
+
+provider:
+  name: aws
+  region: us-east-2
+  runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action: 
+        - "ses:SendEmail"
+      Resource: "*"
+
+
+# Overwrite defaults here
+   stage: dev
+   region: us-west-2
+
+
+
+functions:
+  form:
+    handler: handler.form
+    description: Serverless Contact form submission + Recaptcha (To avoid spam).
+    memorySize: 128
+    timeout: 5
+    events:
+    - http:
+        path: form
+        method: post
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - X-Amz-Date
+            - Authorization
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+          methods:
+            - OPTIONS
+            - POST
+          allowCredentials: false
+
+

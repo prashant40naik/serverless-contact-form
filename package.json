@@ -1,0 +1,16 @@
+{
+  "name": "form-recaptcha",
+  "version": "1.0.0",
+  "description": "Serverless contact form with re-captcha",
+  "main": "contactform.js",
+  "author": {
+    "name": "Prashant Naik",
+    "email": "dmvaley@gmail.com"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.124.0"
+  }
+}
